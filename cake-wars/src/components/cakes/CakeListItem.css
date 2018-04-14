@@ -1,0 +1,25 @@
+.cake-list-item {
+  background-color : lavender;
+  margin-bottom    : 2em;
+}
+
+.cake-list-item:hover {
+  background-color: lavenderblush;
+}
+
+.cake-image {
+  max-height : 8em;
+  max-width  : 8em;
+}
+
+.cake-title, .cake-comment {
+  color : darkslategray;
+}
+
+.cake-title {
+  font-size : 1.5em;
+}
+
+.cake-comment {
+  font-size : 1em;
+}
