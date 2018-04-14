@@ -14,6 +14,19 @@ class CakeApi {
         })
     });
   }
+
+  static getCake(cakeId) {
+    return new Promise((resolve, reject) => {
+      axios.get(cakesEndpoint + '/' + cakeId)
+        .then(response => {
+          resolve(response.data);
+        })
+        .catch(errorResponse => {
+          console.log(errorResponse.response);
+          reject(errorResponse.response);
+        })
+    });
+  }
 }
 
 export default CakeApi;

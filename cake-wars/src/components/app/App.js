@@ -10,17 +10,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo"/>
-          <h1 className="App-title">Cake Wars</h1>
-        </header>
-        <p className="App-intro">
+        <a href='/'>
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo"/>
+            <h1 className="App-title">Cake Wars</h1>
+          </header>
+        </a>
+        <div className="App-intro">
           <Route exact path='/' component={Cakes}/>
           <Switch>
             <Route path='/cake/submit' component={CakeSubmit}/>
             <Route path='/cake/:cakeId' component={CakeDetails}/>
           </Switch>
-        </p>
+        </div>
       </div>
     );
   }
