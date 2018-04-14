@@ -1,3 +1,4 @@
+import './CakeSubmitPage.css';
 import React from 'react';
 import CakeApi from '../../api/CakeApi';
 import {Redirect} from 'react-router-dom';
@@ -36,26 +37,45 @@ class CakeSubmitPage extends React.Component {
     }
 
     return (
-      <div>
+      <div className='col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1'>
         <h1>Submit Cake</h1>
         <form onSubmit={this.submitCake}>
           <div className='row'>
             <label htmlFor='name'>Name:</label>
-            <input id='name' type='text' required onChange={this.onInputChange}/>
+            <input id='name'
+                   type='text'
+                   className='form-control'
+                   required
+                   onChange={this.onInputChange}/>
           </div>
           <div className='row'>
             <label htmlFor='imageUrl'>Image URL:</label>
-            <input id='imageUrl' type='text' required onChange={this.onInputChange}/>
+            <input id='imageUrl'
+                   type='url'
+                   className='form-control'
+                   required
+                   onChange={this.onInputChange}/>
           </div>
           <div className='row'>
             <label htmlFor='yumFactor'>YUM factor:</label>
-            <input id='yumFactor' type='number' required min='1' max='5' onChange={this.onInputChange}/>
+            <input id='yumFactor'
+                   type='number'
+                   className='form-control'
+                   required
+                   min='1'
+                   max='5'
+                   onChange={this.onInputChange}/>
           </div>
           <div className='row'>
             <label htmlFor='comment'>Comment:</label>
-            <textarea id='comment' required onChange={this.onInputChange}/>
+            <textarea id='comment'
+                      className='form-control'
+                      required
+                      onChange={this.onInputChange}/>
           </div>
-          <input type='submit'/>
+          <div className='row'>
+            <input className='btn btn-primary col-xs-12' type='submit'/>
+          </div>
         </form>
       </div>
     );
