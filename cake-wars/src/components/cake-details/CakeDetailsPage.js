@@ -23,7 +23,6 @@ class CakeDetailsPage extends React.Component {
 
   loadCake() {
     CakeApi.getCake(this.props.match.params.cakeId).then(cake => {
-      debugger;
       this.setState({cake: cake});
     })
   }
@@ -32,8 +31,8 @@ class CakeDetailsPage extends React.Component {
     return (
       <div>
         <h1>{this.state.cake.name}</h1>
-        <h2>Yum Factor: {this.state.cake.yumFactor}</h2>
-        <img className='cake-detail-image' src={this.state.cake.imageUrl}/>
+        <h2>YUM Factor: {this.state.cake.yumFactor}</h2>
+        <img className='cake-detail-image' src={this.state.cake.imageUrl} alt={this.state.cake.name}/>
         <h3>{this.state.cake.comment}</h3>
       </div>
     );

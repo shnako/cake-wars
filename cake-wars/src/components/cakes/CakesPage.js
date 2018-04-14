@@ -17,7 +17,6 @@ class CakesPage extends React.Component {
 
   loadCakes() {
     CakeApi.getCakes().then(cakes => {
-      debugger;
       this.setState({cakes: cakes});
     })
   }
@@ -26,7 +25,7 @@ class CakesPage extends React.Component {
     return (
       <div>
         <h1>Cakes</h1>
-        {this.state.cakes.map(cake => <CakeListItem cake={cake}/>)}
+        {this.state.cakes.map(cake => <CakeListItem cake={cake} key={cake.id}/>)}
       </div>
     );
   }
