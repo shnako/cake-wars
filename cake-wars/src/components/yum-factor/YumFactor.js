@@ -7,7 +7,7 @@ const YumFactor = (props) => (
       rating={Number(props.rating)}
       changeRating={props.onChange}
       starDimension='3em'
-      starSpacing='0.75em'
+      starSpacing='0.5em'
       starHoverColor='plum'
       starRatedColor='plum'
     />
