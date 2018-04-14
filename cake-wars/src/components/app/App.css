@@ -1,22 +1,22 @@
-.App {
+.app {
   text-align : center;
 }
 
-.App-logo {
-  height : 80px;
+.app-logo {
+  height : 1.5em;
 }
 
-.App-header {
-  background-color : #222;
-  height           : 150px;
-  padding          : 20px;
-  color            : white;
-}
-
-.App-title {
+.app-title {
   font-size : 1.5em;
+  padding-top: 15em;
 }
 
-.App-intro {
-  font-size : large;
+.navbar-nav-underline-interaction {
+  float: none;
 }
+
+.nav-button:hover {
+  background-color: lavender;
+  cursor: pointer;
+}
+
