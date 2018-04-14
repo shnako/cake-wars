@@ -1,6 +1,7 @@
 import './CakeDetailsPage.css';
 import React from 'react';
 import CakeApi from '../../api/CakeApi';
+import YumFactor from '../yum-factor/YumFactor';
 
 class CakeDetailsPage extends React.Component {
   constructor(props, context) {
@@ -31,7 +32,7 @@ class CakeDetailsPage extends React.Component {
     return (
       <div>
         <h1>{this.state.cake.name}</h1>
-        <h2>YUM Factor: {this.state.cake.yumFactor}</h2>
+        <YumFactor rating={this.state.cake.yumFactor}/>
         <img className='cake-detail-image' src={this.state.cake.imageUrl} alt={this.state.cake.name}/>
         <h3>{this.state.cake.comment}</h3>
       </div>

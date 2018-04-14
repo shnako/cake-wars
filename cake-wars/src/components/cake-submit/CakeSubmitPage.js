@@ -2,6 +2,7 @@ import './CakeSubmitPage.css';
 import React from 'react';
 import CakeApi from '../../api/CakeApi';
 import {Redirect} from 'react-router-dom';
+import YumFactor from '../yum-factor/YumFactor';
 
 class CakeSubmitPage extends React.Component {
   constructor(props, context) {
@@ -11,15 +12,21 @@ class CakeSubmitPage extends React.Component {
       name: '',
       comment: '',
       imageUrl: '',
-      yumFactor: ''
+      yumFactor: 3
     };
 
     this.onInputChange = this.onInputChange.bind(this);
+    this.onYumFactorChange = this.onYumFactorChange.bind(this);
     this.submitCake = this.submitCake.bind(this);
   }
 
   onInputChange(event) {
+    debugger;
     this.setState({[event.target.id]: event.target.value});
+  }
+
+  onYumFactorChange(newYumFactor) {
+    this.setState({yumFactor: newYumFactor});
   }
 
   submitCake(event) {
@@ -37,7 +44,8 @@ class CakeSubmitPage extends React.Component {
     }
 
     return (
-      <div className='col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1'>
+      <div
+        className='col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1'>
         <h1>Submit Cake</h1>
         <form onSubmit={this.submitCake}>
           <div className='row'>
@@ -58,13 +66,7 @@ class CakeSubmitPage extends React.Component {
           </div>
           <div className='row'>
             <label htmlFor='yumFactor'>YUM factor:</label>
-            <input id='yumFactor'
-                   type='number'
-                   className='form-control'
-                   required
-                   min='1'
-                   max='5'
-                   onChange={this.onInputChange}/>
+            <YumFactor id='yumFactor' rating={this.state.yumFactor} onChange={this.onYumFactorChange}/>
           </div>
           <div className='row'>
             <label htmlFor='comment'>Comment:</label>
